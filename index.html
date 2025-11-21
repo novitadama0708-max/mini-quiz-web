@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="bg-nebula"></div>
+    <div id="bg-stars"></div>
+    <div id="bg-stars2"></div>
+
+
+    <div class="container">
+
+        <!-- Halaman Start -->
+         <div id="start-screen">
+            <h1>Mini Quiz Game</h1>
+            <button id="start-btn">Mulai Game</button>
+         </div>
+
+         <!-- Halaman Game -->
+          <div id="game-screen" class="hidden">
+            <div id="question-box">
+                <h2 id="question-text"></h2>
+
+                <div id="options"></div>
+                <button id="next-btn" class="hidden">Soal Selanjutnya</button>
+            </div>
+
+          </div>
+
+           <!-- Halaman Hasil -->
+        <div id="result-screen" class="hidden">
+            <h2>Hasil Game</h2>
+            <p id="score-text"></p>
+            <button onclick="location.reload()">Main Lagi</button>
+        </div>
+
+    </div>
+
+    <script src="js/questions.js"></script>
+    <script src="js/app.js"></script>
+
+    </div>
+</body>
+</html>

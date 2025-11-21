@@ -1,0 +1,157 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: black;
+}
+
+/* ===== BACKGROUND ANIMASI ===== */
+
+/* Layer Nebula besar */
+#bg-nebula {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at 30% 30%, rgba(150, 0, 255, 0.5), transparent 60%),
+                radial-gradient(circle at 70% 60%, rgba(0, 180, 255, 0.45), transparent 65%),
+                radial-gradient(circle at 50% 80%, rgba(255, 0, 120, 0.35), transparent 60%);
+    filter: blur(80px);
+    animation: nebulaFloat 12s ease-in-out infinite alternate;
+    z-index: -3;
+}
+
+/* Layer bintang (pelan) */
+#bg-stars {
+    position: fixed;
+    inset: 0;
+    background: url("https://i.imgur.com/Z8bKQeP.png") repeat;
+    opacity: 0.7;
+    animation: starsMove 20s linear infinite;
+    z-index: -2;
+}
+
+/* Layer bintang (lebih cepat) */
+#bg-stars2 {
+    position: fixed;
+    inset: 0;
+    background: url("https://i.imgur.com/Z8bKQeP.png") repeat;
+    opacity: 0.3;
+    animation: starsMoveFast 12s linear infinite;
+    z-index: -1;
+}
+
+/* ===== BOX (gunakan efek floating) ===== */
+
+.container > div {
+    animation: boxFloat 4s ease-in-out infinite, boxGlow 3s ease-in-out infinite;
+}
+
+.container div {
+    background: rgba(0,0,0,0.45);
+    border: 2px solid rgba(255,255,255,0.25);
+    padding: 25px;
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 20px rgba(0, 195, 255, 0.4);
+    text-align: center;
+    animation: boxFloat 5s ease-in-out infinite;
+}
+
+/* Judul glow */
+h1, h2 {
+    text-shadow: 0 0 20px cyan;
+}
+
+/* Tombol */
+button {
+    padding: 12px 25px;
+    margin-top: 18px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #0df, #b0f);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 0 15px #6f00ff;
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 25px cyan;
+}
+
+/* Opsi */
+.option-btn {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    text-align: left;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.25);
+    transition: 0.2s;
+}
+
+.option-btn:hover {
+    background: rgba(0,255,255,0.2);
+    box-shadow: 0 0 12px cyan;
+}
+
+.correct {
+    background: rgba(0,255,100,0.4) !important;
+    box-shadow: 0 0 20px #00ff6a;
+}
+
+.wrong {
+    background: rgba(255,0,0,0.4) !important;
+    box-shadow: 0 0 20px #ff2727;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ===== ANIMASI KEYFRAMES ===== */
+
+/* Nebula bergerak lembut */
+@keyframes nebulaFloat {
+    0% { transform: translate(-40px, -20px) scale(1); }
+    100% { transform: translate(40px, 20px) scale(1.1); }
+}
+
+/* Bintang bergerak perlahan */
+@keyframes starsMove {
+    from { transform: translateX(0); }
+    to { transform: translateX(-600px); }
+}
+
+/* Bintang lebih cepat */
+@keyframes starsMoveFast {
+    from { transform: translateX(0); }
+    to { transform: translateX(-1200px); }
+}
+
+/* Box melayang */
+@keyframes boxFloat {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Box glow bernafas */
+@keyframes boxGlow {
+    0% { box-shadow: 0 0 18px rgba(0, 200, 255, 0.3); }
+    50% { box-shadow: 0 0 28px rgba(140, 80, 255, 0.7); }
+    100% { box-shadow: 0 0 18px rgba(0, 200, 255, 0.3); }
+}
